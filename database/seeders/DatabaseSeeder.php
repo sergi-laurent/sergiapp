@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 //we import our models from the App\Models directory
 use App\Models\Article;
+use App\Models\Comment;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
     {
        
        Article::factory(count:10)->create();
+       Comment::factory(count:25)->create();
        User::factory(count:10)->create();
     }
 }
