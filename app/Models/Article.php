@@ -13,4 +13,10 @@ class Article extends Model
     //I'm encountering an error when trying to seed the articles database table
     //this is Chat-gpt recomendation to solve the problem
     use HasFactory; // Add this line --------------------------> Indeed, the problem has been solved
+
+    // Model relations --------------------
+    public function author()
+    {
+        return $this->belongsTo(related:User::class, foreignKey:'author_id');
+    }
 }
