@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string(column:'title');
             $table->text(column:'content')->nullable();
-            $table->string(column:'author_name')->nullable();
+            $table->foreignId(column:'author_id');
             
 
             $table->timestamps();
