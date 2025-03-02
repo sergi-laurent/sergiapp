@@ -6,6 +6,7 @@ use Livewire\Volt\Volt;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route for the Article index
 Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index']);
+//Route for the Article show
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
 
 
