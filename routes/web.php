@@ -9,6 +9,12 @@ Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index'
 //Route for the Article show
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
 
+//Route for the Auhtors index
+Route::get('/authors', [\App\Http\Controllers\AuthorController::class, 'index']);
+//Route for the Article show
+Route::get('/authors/{author}', [\App\Http\Controllers\AuthorController::class, 'show']);
+
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

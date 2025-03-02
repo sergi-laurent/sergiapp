@@ -23,7 +23,7 @@ class SiteLayoutHeader extends Component
     {
         $menu = [
             'Articles'=>'/articles',
-            'Authors'=> null,
+            'Authors'=> '/authors',
             //'keywords'=> null,
             //'contact us'=> null,
         ];
