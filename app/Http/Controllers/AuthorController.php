@@ -10,7 +10,7 @@ class AuthorController extends Controller
     //
     public function index()
 	{
-        $authors = User::orderBy('name')->get();
+        $authors = User::orderBy('name')->whereHas('articles')->get();
         return view('site.authors.index', ['authors'=>$authors]);
 	}
 
