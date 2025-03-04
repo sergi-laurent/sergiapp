@@ -6,6 +6,7 @@
 		<form action="/articles/{{$article->id}}" method="post">
 			@method('DELETE')
 			@csrf
+			<button type="submit" class="hover:font-semibold hover:text-purple-700">Delete Article</button>
 		</form>
 
 	</div>
