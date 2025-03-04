@@ -1,6 +1,11 @@
 <x-site-layout>
 
 	<h1 class="font-bold text-4xl">Hello from the view</h1>
+
+	<div class="text-right">
+		<a href="/articles/create" class="hover:font-semibold hover:text-purple-700">Create Article</a> 
+	</div>
+
 	
 	<ul class="grid grid-cols-3 gap-12 mt-12">
 	    @foreach($articles as $article)

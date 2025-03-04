@@ -4,8 +4,14 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
 //Route for the Article index
 Route::get('/articles', [\App\Http\Controllers\ArticleController::class, 'index']);
+//Route to create and post a new Article
+Route::get('/articles/create', [\App\Http\Controllers\ArticleController::class, 'create']);
+Route::post('/articles', [\App\Http\Controllers\ArticleController::class, 'store']);
 //Route for the Article show
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
 
