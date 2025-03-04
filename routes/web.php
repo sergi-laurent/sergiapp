@@ -14,6 +14,9 @@ Route::get('/articles/create', [\App\Http\Controllers\ArticleController::class, 
 Route::post('/articles', [\App\Http\Controllers\ArticleController::class, 'store']);
 //Route for the Article show
 Route::get('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'show']);
+//Route to edit an article
+Route::get('/articles/{article}/edit', [\App\Http\Controllers\ArticleController::class, 'edit']);
+Route::put('/articles/{article}', [\App\Http\Controllers\ArticleController::class, 'update']);
 
 //Route for the Auhtors index
 Route::get('/authors', [\App\Http\Controllers\AuthorController::class, 'index']);

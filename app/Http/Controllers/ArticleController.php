@@ -46,5 +46,29 @@ class ArticleController extends Controller
         return redirect('/articles');
     }
 
+    public function edit(int $id)
+    {
+        $article = \App\Models\Article::where('id',$id )->first();
+        return view('site.articles.edit', compact('article'));
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $article = \App\Models\Article::where('id',$id )->first();
+
+        $request->validate([
+            'title'=>['required', 'string', 'min:10', 'max:255'],
+            'content'=>['required'],
+        ]);
+
+
+        $article->update([
+                'title' => $request->title,
+                'content'=> $request->content,
+            ]);      
+            
+        return redirect('/articles/' . $article->id);
+    }
+
 }
 
