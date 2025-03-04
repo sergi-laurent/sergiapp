@@ -14,6 +14,8 @@ class Article extends Model
     //this is Chat-gpt recomendation to solve the problem
     use HasFactory; // Add this line --------------------------> Indeed, the problem has been solved
 
+    protected $guarded = [];
+
     // Model relations --------------------
     public function author()
     {
