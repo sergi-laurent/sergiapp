@@ -1,10 +1,10 @@
 <x-site-layout>
 
     <x-form 
-        action="/articles/{{$article->id}}" 
+        action="{{route('articles.update', $article)}}" 
         method="put" 
         title='Update Article' 
-        cancelurl="/articles/{{$article->id}}" 
+        cancelurl="{{route('articles.show', $article)}}" 
         submittext="Update Article">
 
         <x-form-input name='title' label='Article title' placeholder='Write the title here' :value='$article->title'/>

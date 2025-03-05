@@ -40,7 +40,7 @@ class ArticleController extends Controller
                 'author_id'=> 1,
             ]);      
             
-        return redirect('/articles');
+        return redirect()->route('articles.index');
     }
 
     public function edit(Article $article)
@@ -61,14 +61,14 @@ class ArticleController extends Controller
                 'content'=> $request->content,
             ]);      
             
-        return redirect('/articles/' . $article->id);
+        return redirect()->route('articles.index');
     }
 
     public function destroy(Request $request, Article $article)
     {
         $article->delete();
             
-        return redirect('/articles');
+        return redirect()->route('articles.index');
     }
 }
 

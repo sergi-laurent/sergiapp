@@ -1,8 +1,8 @@
 <x-site-layout>
 
 	<div class="text-right flex justify-end gap-2">
-		<a href="/articles/{{$article->id}}/edit" class="bg-purple-100 text-purple-500 uppercase p-2 hover:font-semibold rounded-sm">Edit Article</a>
-		<form action="/articles/{{$article->id}}" method="post">
+		<a href="{{route('articles.edit', $article)}}" class="bg-purple-100 text-purple-500 uppercase p-2 hover:font-semibold rounded-sm">Edit Article</a>
+		<form action="{{route('articles.destroy', $article)}}" method="post">
 			@method('DELETE')
 			@csrf
 			<button type="submit" class="bg-red-100 text-red-500 uppercase p-2 hover:font-semibold rounded-sm">Delete Article</button>
