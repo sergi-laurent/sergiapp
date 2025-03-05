@@ -7,13 +7,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 
 Route::resource('articles', \App\Http\Controllers\ArticleController::class); 
 
+Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index','show']);
 
-
-
-//Route for the Auhtors index
-Route::get('/authors', [\App\Http\Controllers\AuthorController::class, 'index']);
-//Route for the Author show
-Route::get('/authors/{author}', [\App\Http\Controllers\AuthorController::class, 'show']);
 
 
 
