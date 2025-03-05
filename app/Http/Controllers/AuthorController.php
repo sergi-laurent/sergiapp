@@ -17,7 +17,7 @@ class AuthorController extends Controller
     public function show(int $author)
 	{
         //fetch the data
-        $author = \App\Models\User::where('id',$author )->first();
+        $author = \App\Models\User::where('id',$author)->first();
 
         //render the data
         return view('site.authors.show', ['author'=>$author]);
