@@ -9,6 +9,8 @@ Route::resource('articles', \App\Http\Controllers\ArticleController::class);
 
 Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index','show']);
 
+Route::resource('keywords', \App\Http\Controllers\KeywordController::class)->except(['show']);
+
 
 
 
