@@ -1,10 +1,10 @@
 <x-site-layout>
 
     <x-form 
-        action="/articles" 
+        :action="route('articles.store')" 
         method="post" 
         title='Create Article' 
-        cancelurl="/articles" 
+        :cancelurl="route('articles.index')"
         submittext="Create Article">
 
         <x-form-input name='title' label='Article title' placeholder='Write the title here'/>
