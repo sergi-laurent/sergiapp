@@ -22,8 +22,8 @@ class SiteLayoutHeader extends Component
     public function render(): View|Closure|string
     {
         $menu = [
-            'Articles'=>'/articles',
-            'Authors'=> '/authors',
+            'Articles'=>route('articles.index'),
+            'Authors'=> route('authors.index'),
             //'keywords'=> null,
             //'contact us'=> null,
         ];
