@@ -14,7 +14,7 @@ class FormCheckbox extends Component
     public function __construct(
         public string $name,
         public string $label,
-        public array $options,
+        public array $options,             //expects an array of [id1=>option1, id2=>option2] 
         public array $values = [null],
     )
     {
