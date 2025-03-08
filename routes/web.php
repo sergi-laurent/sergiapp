@@ -8,9 +8,10 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::resource('articles', \App\Http\Controllers\ArticleController::class)->only(['index', 'show']); ; 
 Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index','show']);
 
-Route::resource('articles', \App\Http\Controllers\ArticleController::class); 
+//Logged In user Area of the Website
 Route::prefix('/admin')->name('admin.')->middleware(['auth'])->group(function(){
     Route::get('/',\App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
+    Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class);
 });
 
 
