@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
        $articles = Article::factory(count:10)->create();
        Comment::factory(count:25)->create();
        
-       Keyword::factory(count:10)->create();
+       Keyword::factory(count:5)->create();
 
        //add keywords to articles
        foreach($articles as $article){
