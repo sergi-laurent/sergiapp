@@ -1,10 +1,10 @@
 <x-site-layout>
 
-	<h1 class="font-bold text-4xl">Hello from the view</h1>
 
 	<div class="text-right">
 		<a href="{{route('articles.create')}}" class="bg-purple-500 text-purple-50 uppercase p-2 hover:font-semibold rounded-sm">Create Article</a> 
 	</div>
+	<h1 class="font-bold text-4xl">Articles</h1>
 
 	
 	<ul class="grid grid-cols-3 gap-12 mt-12">
