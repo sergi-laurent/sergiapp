@@ -26,4 +26,19 @@ class Article extends Model
     {
         return $this->belongsToMany(related:Keyword::class);
     }
+
+    //Business Logic
+    public function canEdit(): bool
+    {
+        if($this->author_id == auth()->user()->id)
+        {
+            return true;
+        }
+        if(auth()->user()->is_admin)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

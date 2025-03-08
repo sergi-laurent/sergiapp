@@ -59,11 +59,20 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
+        if(!$article->canEdit()){
+            abort(401);
+        };
+        
         return view('admin.articles.edit', compact('article'));
     }
 
     public function update(Request $request, Article $article)
     {
+        if(!$article->canEdit()){
+            abort(401);
+        };
+        
+        
         $request->validate([
             'title'=>['required', 'string', 'min:10', 'max:255'],
             'content'=>['required'],
@@ -83,6 +92,10 @@ class ArticleController extends Controller
 
     public function destroy(Request $request, Article $article)
     {
+        if(!$article->canEdit()){
+            abort(401);
+        };
+
         $article->delete();
             
         return redirect()->route('admin.articles.index');
