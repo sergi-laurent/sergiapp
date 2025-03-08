@@ -12,9 +12,8 @@ class KeywordController extends Controller
      */
     public function index()
     {
-        //
         $keywords = Keyword::all();
-        return view('site.keywords.index', compact('keywords'));
+        return view('admin.keywords.index', compact('keywords'));
     }
 
     /**
@@ -22,7 +21,7 @@ class KeywordController extends Controller
      */
     public function create()
     {
-        return view('site.keywords.create');
+        return view('admin.keywords.create');
     }
 
     /**
@@ -37,7 +36,7 @@ class KeywordController extends Controller
         Keyword::create([
             'title'=>$request->title,
         ]);
-        return redirect()->route('keywords.index');
+        return redirect()->route('admin.keywords.index');
     }
 
     /**
@@ -45,7 +44,7 @@ class KeywordController extends Controller
      */
     public function edit(Keyword $keyword)
     {
-        return view('site.keywords.edit', compact('keyword'));
+        return view('admin.keywords.edit', compact('keyword'));
     }
 
     /**
@@ -60,7 +59,7 @@ class KeywordController extends Controller
         $keyword->update([
             'title'=>$request->title,
         ]);
-        return redirect()->route('keywords.index');
+        return redirect()->route('admin.keywords.index');
     }
 
     /**
@@ -70,6 +69,6 @@ class KeywordController extends Controller
     {
         $keyword->delete();
 
-        return redirect()->route('keywords.index');
+        return redirect()->route('admin.keywords.index');
     }
 }
