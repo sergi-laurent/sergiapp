@@ -1,15 +1,5 @@
 <x-site-layout>
-
-	<div class="text-right flex justify-end gap-2">
-		<a href="{{route('articles.edit', $article)}}" class="bg-purple-100 text-purple-500 uppercase p-2 hover:font-semibold rounded-sm">Edit Article</a>
-		<form action="{{route('articles.destroy', $article)}}" method="post">
-			@method('DELETE')
-			@csrf
-			<button type="submit" class="bg-red-100 text-red-500 uppercase p-2 hover:font-semibold rounded-sm">Delete Article</button>
-		</form>
-
-	</div>
-
+	
 	<h1 class="font-bold mb-4 text-4xl">{{$article->title}}</h1>
 	<div class="mb-8">Article by <span class="font-semibold">{{$article->author->name}}</span></div>
 
