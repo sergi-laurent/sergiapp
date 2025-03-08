@@ -16,9 +16,14 @@ class ArticleController extends Controller
     //
     public function index()
 	{
-        $articles = Article::all();
-		//return view(view:'site/articles/index.blade.php');
-        //we can write it like this:
+        if(auth()->user()->is_admin){
+            $articles = Article::all();	
+        } 
+        
+        else {
+            $articles = Article::where('author_id', auth()->user()->id)->get();		
+        }
+        
         return view('admin.articles.index', ['articles'=>$articles]);
 	}
 
