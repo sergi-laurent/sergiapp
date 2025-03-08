@@ -6,13 +6,13 @@ use Livewire\Volt\Volt;
 //Public Area of the Website
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('articles', \App\Http\Controllers\ArticleController::class)->only(['index', 'show']); ; 
+Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index','show']);
 
 Route::resource('articles', \App\Http\Controllers\ArticleController::class); 
 Route::prefix('/admin')->name('admin.')->middleware(['auth'])->group(function(){
     Route::get('/',\App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
 });
 
-Route::resource('authors', \App\Http\Controllers\AuthorController::class)->only(['index','show']);
 
 Route::resource('keywords', \App\Http\Controllers\KeywordController::class)->except(['show']);
 
