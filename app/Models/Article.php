@@ -21,4 +21,9 @@ class Article extends Model
     {
         return $this->belongsTo(related:User::class, foreignKey:'author_id');
     }
+
+    public function keywords()
+    {
+        return $this->belongsToMany(related:Keyword::class);
+    }
 }
